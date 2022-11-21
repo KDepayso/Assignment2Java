@@ -9,6 +9,15 @@ class CardTests {
     Card twoOfClubs = new Card(Ranks.TWO, Suits.CLUBS);
 
     @Test
+    void returnCorrectRankValue(){ assertEquals(12, aceOfSpades.getRankValue());}
+
+    @Test
+    void returnCorrectSuitValue(){ assertEquals("DIAMONDS", tenOfDiamonds.getSuit());}
+
+    @Test
+    void returnCorrectRank(){ assertEquals("TEN", tenOfDiamonds.getRank());}
+
+    @Test
     void isDiamondsRed(){
         assertEquals(Colours.RED.toString(),tenOfDiamonds.getColour());
     }
@@ -24,10 +33,7 @@ class CardTests {
     }
 
     @Test
-    void isClubsBlack(){
-        assertEquals(Colours.BLACK.toString(),twoOfClubs.getColour());
-
-    }
+    void isClubsBlack(){ assertEquals(Colours.BLACK.toString(),twoOfClubs.getColour()); }
 
     @Test
     void doesToStringPrintCorrectly(){
@@ -49,6 +55,7 @@ class CardTests {
         Card tenOfSpades = new Card(Ranks.TEN, Suits.SPADES);
         assertEquals(0,tenOfDiamonds.compareTo(tenOfSpades));
     }
+
 
 
 
