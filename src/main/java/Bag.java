@@ -1,10 +1,10 @@
 public abstract class Bag {
 
-    private Card[] bag;
+    private final Card[] bag;
     private int numberOfEntries;
 
-    protected Bag() {
-        numberOfEntries = 0;
+    protected Bag(int numCards) {
+        bag = new Card[numCards];
     }
 
 
@@ -19,14 +19,18 @@ public abstract class Bag {
 
 
     public boolean addNewEntry(Card newEntry) {
-        if (isDeckFull()) return false;
+        if (isBagFull() || isCardRepeated(newEntry)) return false;
         else{
             bag[numberOfEntries++] = newEntry;
             return true;
         }
     }
 
-    private boolean isDeckFull(){
+    private boolean isCardRepeated(Card newEntry){
+        return this.contains(newEntry);
+    }
+
+    private boolean isBagFull(){
         return (bag.length == numberOfEntries);
     }
 
@@ -37,7 +41,7 @@ public abstract class Bag {
         while(!found && index < numberOfEntries)
             if(bag[index].equals(anEntry)) found = true;
             else index++;
-        if(found) removeElementAt(index);
+        if(found){ removeElementAt(index); }
         return found;
     }
 
@@ -57,7 +61,6 @@ public abstract class Bag {
             bag[index] = bag[numberOfEntries - 1];
             bag[numberOfEntries - 1 ] = null;
             numberOfEntries--;
-
         }
         return result;
     }
@@ -78,17 +81,17 @@ public abstract class Bag {
     }
 
 
-    public void display(){
-        displayArray(0,numberOfEntries - 1);
+
+    @Override
+    public String toString(){
+        String strResult = "";
+        for(int i = 0; i < numberOfEntries; i++)
+            strResult += bag[i] + "\n";
+        strResult += "";
+        return strResult;
     }
 
-    private void displayArray(int first, int last){
 
-        if(first <= last){
-            System.out.println(bag[last]);
-            displayArray(first , last - 1);
-        }
-    }
 
 
 }

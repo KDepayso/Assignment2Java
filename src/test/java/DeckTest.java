@@ -4,7 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class DeckTest {
 
-    Deck deck = new Deck();
+     Deck deck = new Deck();
+
+    Card testCard = new Card(Ranks.ACE,Suits.HEARTS);
 
 
 
@@ -47,15 +49,70 @@ class DeckTest {
 
     @Test
     void returnNumberEntries(){
+
         deck.generateNewDeckOfCards();
         assertEquals(52,deck.getCurrentSize());
+
+        deck.remove(testCard);
+        assertEquals(51,deck.getCurrentSize());
+
+        Deck newDeck = new Deck();
+        assertEquals(0,newDeck.getCurrentSize());
+
+    }
+
+    @Test
+    void doesDeckContainCard(){
+        deck.generateNewDeckOfCards();
+        assertTrue(deck.contains(testCard));
+
     }
 
     @Test
     void addNewCardToDeck(){
-        Card testCard = new Card(Ranks.ACE,Suits.HEARTS);
+        Deck emptyDeck = new Deck();
+        emptyDeck.addNewEntry(testCard);
+        assertTrue(emptyDeck.contains(testCard));
+
+    }
+
+
+    @Test
+    void ifBagIsFullCantAddCards(){
+        deck.generateNewDeckOfCards();
+        assertFalse(deck.addNewEntry(testCard));
+
+    }
+
+    @Test
+    void canDuplicateCardsBeAdded(){
+        deck.generateNewDeckOfCards();
+        assertFalse(deck.addNewEntry(testCard));
+
+    }
+
+    @Test
+    void canCardsBeRemoved(){
+        deck.generateNewDeckOfCards();
+        deck.remove(testCard);
+        assertFalse(deck.contains(testCard));
+    }
+
+    @Test
+    void canARemovedCardBeReAdded(){
+        deck.generateNewDeckOfCards();
+        deck.remove(testCard);
+        assertFalse(deck.contains(testCard));
         deck.addNewEntry(testCard);
-        assertEquals("ACE of HEARTS", deck.toString());
+        assertTrue(deck.contains(testCard));
+    }
+
+    @Test
+    void canDeckBeCleared(){
+        deck.generateNewDeckOfCards();
+        assertEquals(52,deck.getCurrentSize());
+        deck.clear();
+        assertEquals(0,deck.getCurrentSize());
 
     }
 

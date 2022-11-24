@@ -40,14 +40,35 @@ public class Card implements Comparable<Card>{
 
 
     @Override
-    public String toString(){
-        return getRank() + " of " + getSuit();
-    }
+    public String toString(){ return getRank() + " of " + getSuit(); }
 
     @Override
     public int compareTo(Card otherCard){
-        if(this.getRankValue() > otherCard.getRankValue()) return 1;
-        else if(this.getRankValue() < otherCard.getRankValue()) return -1;
-        else return 0;
+        return Integer.compare(this.getRankValue(), otherCard.getRankValue());
     }
+
+
+    /*Without override, equals compares by identity. Two objects created by new will always have distinct identities
+    and therefore will never be equal. Hashmap should also be overridden, but I will not be using it, so I chose not
+    to.
+
+     */
+    @Override
+    public boolean equals(Object card){
+        if(card == null) return false;
+
+        if(card.getClass() != this.getClass()) return false;
+
+        Card otherCard = (Card) card;
+
+        if(this.rank != otherCard.rank) return false;
+
+        if(this.suit != otherCard.suit) return false;
+
+        return true;
+
+    }
+
+
+
 }

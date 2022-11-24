@@ -56,6 +56,13 @@ class CardTests {
         assertEquals(0,tenOfDiamonds.compareTo(tenOfSpades));
     }
 
+    @Test
+    void isTenEqualToTenUsingEquals(){
+        Card tenOfSpades = new Card(Ranks.TEN, Suits.SPADES);
+        Card tenOfSpades2 = new Card(Ranks.TEN, Suits.SPADES);
+        assertTrue(tenOfSpades.equals(tenOfSpades2));
+    }
+
 
 
 
