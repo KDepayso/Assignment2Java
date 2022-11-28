@@ -1,11 +1,17 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.EmptyStackException;
+import java.util.Stack;
 
-public class Stack<T> {
+public class MyStack<T> {
 
     private MyNode<T> topNode;
+    private int size;
 
-    public Stack() {
+    public MyStack() {
+
         topNode = null;
+        size = 0;
     }
 
     public void push (T newEntry){
@@ -39,6 +45,21 @@ public class Stack<T> {
     public void clear(){
 
         topNode = null;
+
+    }
+    public int getSize(){
+        return size;
+    }
+
+    public T[] toArray(){
+        T[] resultArray = (T[]) new Object[size];
+        MyStack<T> duplicateStack = this;
+        for(int i = 0; i < size; i++){
+            if(duplicateStack.peek() != null){
+                resultArray[i] = duplicateStack.pop();
+            }
+        }
+        return resultArray;
 
     }
 }

@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         Hand hand = new Hand(5);
@@ -17,7 +19,9 @@ public class Main {
 
         hand.sortHand();
 
-        System.out.println(hand);
+        System.out.println(Arrays.toString(hand.getLongestStreakOfCards()));
+
+
 
 
 

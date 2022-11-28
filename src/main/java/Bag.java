@@ -3,6 +3,7 @@ public abstract class Bag {
     private final Card[] bag;
     private int numberOfEntries;
 
+
     protected Bag(int numCards) {
         bag = new Card[numCards];
     }
@@ -12,6 +13,8 @@ public abstract class Bag {
     public int getCurrentSize() {
         return numberOfEntries;
     }
+
+    public int getMaximumSize() { return bag.length; }
 
     public boolean isEmpty() {
         return numberOfEntries == 0;

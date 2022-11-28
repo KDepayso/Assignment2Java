@@ -48,6 +48,11 @@ class DeckTest {
     }
 
     @Test
+    void getMaxSize(){
+        assertEquals(52,deck.getMaximumSize());
+    }
+
+    @Test
     void returnNumberEntries(){
 
         deck.generateNewDeckOfCards();
@@ -115,6 +120,31 @@ class DeckTest {
         assertEquals(0,deck.getCurrentSize());
 
     }
+
+    @Test
+    void toArrayMethod(){
+        deck.generateNewDeckOfCards();
+        assertArrayEquals(generateArrayOfCards(),deck.toArray());
+    }
+
+    private Card[] generateArrayOfCards(){
+
+        Card[] cardArray = new Card[52];
+        int count = 0;
+
+        for(Suits suits : Suits.values()){
+
+            for(Ranks ranks : Ranks.values()){
+
+                Card newCard = new Card(ranks,suits);
+                cardArray[count] = newCard;
+                count++;
+            }
+        }
+
+        return cardArray;
+    }
+
 
 
 }
