@@ -58,7 +58,7 @@ class HandTest {
         hand.addNewEntry(card4);
         hand.addNewEntry(card5);
 
-        assertEquals(1, hand.getLongestStreakOfCards().length);
+        assertEquals(0, hand.getLongestStreakOfCards().length);
 
 
 

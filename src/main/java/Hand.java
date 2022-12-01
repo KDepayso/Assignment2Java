@@ -1,8 +1,3 @@
-import com.sun.org.apache.xml.internal.dtm.ref.DTMDefaultBaseIterators;
-
-import java.util.Random;
-import java.util.Stack;
-
 public class Hand extends Bag{
 
     int maxCards;
@@ -109,46 +104,37 @@ public class Hand extends Bag{
         this.sortHand();
         Card[] handArray = this.toArray();
 
-
-        MyStack<Card> temp = new MyStack<>();
-        MyStack<Card> longestStreak = new MyStack<>();
-
-
-//        if(handArray[0].getRankValue() == handArray[1].getRankValue() - 1){
-//            temp.push(handArray[0]);
-//            temp.push(handArray[1]);
-//            longestStreak.copy(temp);
-//        }
+        Hand bestHand = new Hand(getMaximumSize());
+        Hand tempHand = new Hand(getMaximumSize());
 
         for(int i = 0; i < getCurrentSize() - 1; i ++){
 
             if(handArray[i].getRankValue() + 1 == handArray[i + 1].getRankValue()){
-                temp.push(handArray[i + 1]);
-                temp.push(handArray[i]);
+                tempHand.addNewEntry(handArray[i]);
+                tempHand.addNewEntry(handArray[i + 1]);
             }
             else{
-                temp.clear();
+                tempHand.clear();
             }
-            if(longestStreak.getSize() < temp.getSize()){
-                longestStreak.copy(temp);
+            if(bestHand.getCurrentSize() < tempHand.getCurrentSize()){
+                bestHand = copyFromOtherHand(tempHand);
             }
 
         }
 
-        return convertCardStackToArray(longestStreak);
-
+        return bestHand.toArray();
 
     }
 
-    private Card[] convertCardStackToArray(MyStack<Card> cardStack){
+    private Hand copyFromOtherHand(Hand otherHand){
+        Card[] otherHandArray = otherHand.toArray();
 
-        Card[] cardArray = new Card[cardStack.getSize()];
-        for(int i =0; i < cardArray.length; i++){
-            cardArray[i] = cardStack.pop();
+        Hand newHand = new Hand(otherHandArray.length);
+        for(Card card : otherHandArray){
+            newHand.addNewEntry(card);
         }
 
-        return cardArray;
-
+        return newHand;
     }
 
 

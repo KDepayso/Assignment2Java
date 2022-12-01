@@ -8,8 +8,6 @@ public abstract class Bag {
         bag = new Card[numCards];
     }
 
-
-
     public int getCurrentSize() {
         return numberOfEntries;
     }
@@ -82,8 +80,6 @@ public abstract class Bag {
         System.arraycopy(bag,0,resultArray,0,numberOfEntries);
         return resultArray;
     }
-
-
 
     @Override
     public String toString(){
