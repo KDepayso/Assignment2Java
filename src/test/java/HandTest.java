@@ -39,28 +39,31 @@ class HandTest {
 
     }
 
-//    @Test
-//    void returnMaxStreakLength(){
-//        generateHand();
-//        assertEquals(5, hand.determineLongestStreak());
-//
-//        Card card1 = new Card(Ranks.TWO, Suits.HEARTS);
-//        Card card2 = new Card(Ranks.THREE, Suits.HEARTS);
-//        Card card3 = new Card(Ranks.SIX, Suits.HEARTS);
-//        Card card4 = new Card(Ranks.ACE, Suits.HEARTS);
-//        Card card5 = new Card(Ranks.QUEEN, Suits.HEARTS);
-//
-//        hand.clear();
-//
-//        hand.addNewEntry(card1);
-//        hand.addNewEntry(card2);
-//        hand.addNewEntry(card3);
-//        hand.addNewEntry(card4);
-//        hand.addNewEntry(card5);
-//
-//        assertEquals(2, hand.determineLongestStreak());
-//
-//    }
+    @Test
+    void returnMaxStreakLength(){
+        generateHand();
+        assertEquals(5, hand.getLongestStreakOfCards().length);
+
+        Card card1 = new Card(Ranks.TWO, Suits.HEARTS);
+        Card card2 = new Card(Ranks.FOUR, Suits.HEARTS);
+        Card card3 = new Card(Ranks.SIX, Suits.HEARTS);
+        Card card4 = new Card(Ranks.ACE, Suits.HEARTS);
+        Card card5 = new Card(Ranks.QUEEN, Suits.HEARTS);
+
+        hand.clear();
+
+        hand.addNewEntry(card1);
+        hand.addNewEntry(card2);
+        hand.addNewEntry(card3);
+        hand.addNewEntry(card4);
+        hand.addNewEntry(card5);
+
+        assertEquals(1, hand.getLongestStreakOfCards().length);
+
+
+
+
+    }
 
 
 }

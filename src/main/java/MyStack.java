@@ -19,6 +19,7 @@ public class MyStack<T> {
         MyNode<T> newNode = new MyNode<>(newEntry);
         newNode.setNextNode(topNode);
         topNode = newNode;
+        size++;
 
     }
 
@@ -27,6 +28,7 @@ public class MyStack<T> {
 
         T dataToReturn = peek();
         topNode = topNode.getNextNode();
+        size--;
         return dataToReturn;
     }
 
@@ -37,6 +39,10 @@ public class MyStack<T> {
 
     }
 
+    public MyNode<T> getTopNode(){
+        return this.topNode;
+    }
+
     public boolean isEmpty(){
 
         return (topNode == null);
@@ -45,21 +51,17 @@ public class MyStack<T> {
     public void clear(){
 
         topNode = null;
+        size = 0;
 
     }
     public int getSize(){
         return size;
     }
 
-    public T[] toArray(){
-        T[] resultArray = (T[]) new Object[size];
-        MyStack<T> duplicateStack = this;
-        for(int i = 0; i < size; i++){
-            if(duplicateStack.peek() != null){
-                resultArray[i] = duplicateStack.pop();
-            }
-        }
-        return resultArray;
+    public void copy(MyStack<T> otherStack){
+        this.size = otherStack.getSize();
+        this.topNode = otherStack.getTopNode();
 
     }
+
 }

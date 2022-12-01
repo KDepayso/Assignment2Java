@@ -1,3 +1,5 @@
+import com.sun.org.apache.xml.internal.dtm.ref.DTMDefaultBaseIterators;
+
 import java.util.Random;
 import java.util.Stack;
 
@@ -104,30 +106,49 @@ public class Hand extends Bag{
     }
 
     public Card[] getLongestStreakOfCards(){
+        this.sortHand();
+        Card[] handArray = this.toArray();
 
-        MyStack<Card> longestStreak = new MyStack<Card>();
+
         MyStack<Card> temp = new MyStack<>();
+        MyStack<Card> longestStreak = new MyStack<>();
 
-        Card[] hand = this.toArray();
 
-        int streakLength = 1, maxStreakLength = 0;
+//        if(handArray[0].getRankValue() == handArray[1].getRankValue() - 1){
+//            temp.push(handArray[0]);
+//            temp.push(handArray[1]);
+//            longestStreak.copy(temp);
+//        }
 
-        for(int i = 0; i < getCurrentSize() - 1; i++){
+        for(int i = 0; i < getCurrentSize() - 1; i ++){
 
-            if(hand[i].getRankValue() + 1 == hand[i+1].getRankValue()){
-                temp.push(hand[i]);
+            if(handArray[i].getRankValue() + 1 == handArray[i + 1].getRankValue()){
+                temp.push(handArray[i + 1]);
+                temp.push(handArray[i]);
             }
-            else {
+            else{
                 temp.clear();
             }
-
-            if(longestStreak.getSize() < temp.getSize() ){
-                longestStreak = temp;
+            if(longestStreak.getSize() < temp.getSize()){
+                longestStreak.copy(temp);
             }
 
         }
 
-        return longestStreak.toArray();
+        return convertCardStackToArray(longestStreak);
+
+
+    }
+
+    private Card[] convertCardStackToArray(MyStack<Card> cardStack){
+
+        Card[] cardArray = new Card[cardStack.getSize()];
+        for(int i =0; i < cardArray.length; i++){
+            cardArray[i] = cardStack.pop();
+        }
+
+        return cardArray;
+
     }
 
 

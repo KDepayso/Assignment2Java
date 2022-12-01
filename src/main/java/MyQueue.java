@@ -38,6 +38,15 @@ public class MyQueue<T> {
         else return front.getData();
     }
 
+    public T getRear(){
+        if(rear == null) return null;
+        else return rear.getData();
+    }
+
+    public int getSize(){
+        return size;
+    }
+
     public boolean isEmpty(){
         return (front == null);
     }
@@ -46,7 +55,5 @@ public class MyQueue<T> {
         front = null;
         rear = null;
     }
-
-
 
 }
