@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3525f51-e742-45b4-8580-6b20585f5f4a" name="Changes" comment="Added 1 Version of Longest Streak of Cards.">
+    <list default="true" id="b3525f51-e742-45b4-8580-6b20585f5f4a" name="Changes" comment="Added another version of get longest length using Hand class.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Streak.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/StreakSinglePlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/StreakTwoPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/StreakSinglePlayerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Bag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Bag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Deck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DeckTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DeckTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/HandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HandTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,13 +23,16 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -66,52 +76,52 @@
       <recent name="main.java" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.HandTest.returnMaxStreakLength">
-    <configuration name="DeckTest.getMaxSize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.StreakSinglePlayerTest.dealHand">
+    <configuration name="DeckTest.removeRandomCardFromDeck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment2Java" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="DeckTest" />
-      <option name="METHOD_NAME" value="getMaxSize" />
+      <option name="METHOD_NAME" value="removeRandomCardFromDeck" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DeckTest.toArrayMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DeckTest.retrievingCardRemovesCardFromDeck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment2Java" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="DeckTest" />
-      <option name="METHOD_NAME" value="toArrayMethod" />
+      <option name="METHOD_NAME" value="retrievingCardRemovesCardFromDeck" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HandTest.generateDifferentHandSizes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HandTest.exchangeCard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment2Java" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="HandTest" />
-      <option name="METHOD_NAME" value="generateDifferentHandSizes" />
+      <option name="METHOD_NAME" value="exchangeCard" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HandTest.isHandSorted" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HandTest.isColourScoreCalculated" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment2Java" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="HandTest" />
-      <option name="METHOD_NAME" value="isHandSorted" />
+      <option name="METHOD_NAME" value="isColourScoreCalculated" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HandTest.returnMaxStreakLength" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StreakSinglePlayerTest.dealHand" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment2Java" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HandTest" />
-      <option name="METHOD_NAME" value="returnMaxStreakLength" />
+      <option name="MAIN_CLASS_NAME" value="StreakSinglePlayerTest" />
+      <option name="METHOD_NAME" value="dealHand" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -119,11 +129,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.HandTest.returnMaxStreakLength" />
-        <item itemvalue="JUnit.DeckTest.getMaxSize" />
-        <item itemvalue="JUnit.DeckTest.toArrayMethod" />
-        <item itemvalue="JUnit.HandTest.generateDifferentHandSizes" />
-        <item itemvalue="JUnit.HandTest.isHandSorted" />
+        <item itemvalue="JUnit.StreakSinglePlayerTest.dealHand" />
+        <item itemvalue="JUnit.HandTest.exchangeCard" />
+        <item itemvalue="JUnit.HandTest.isColourScoreCalculated" />
+        <item itemvalue="JUnit.DeckTest.removeRandomCardFromDeck" />
+        <item itemvalue="JUnit.DeckTest.retrievingCardRemovesCardFromDeck" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669912676868</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added another version of get longest length using Hand class.">
+      <created>1669913396330</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1669913396330</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -191,7 +208,8 @@
     <MESSAGE value="Fixed Deck class, Finish Hand class" />
     <MESSAGE value="Fix toArray class, look at https://stackoverflow.com/questions/20486641/ljava-lang-object-cannot-be-cast-to" />
     <MESSAGE value="Added 1 Version of Longest Streak of Cards." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added 1 Version of Longest Streak of Cards." />
+    <MESSAGE value="Added another version of get longest length using Hand class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added another version of get longest length using Hand class." />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
@@ -201,6 +219,10 @@
       </pinned-members>
     </pin-to-top-manager>
     <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="hand" language="JAVA" />
+        <watch expression="hand" language="JAVA" />
+      </configuration>
       <configuration name="Application">
         <watch expression="args" />
         <watch expression="args" />
@@ -212,7 +234,9 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Assignment2Java$CardTests_doesToStringPrintCorrectValue.ic" NAME="CardTests.doesToStringPrintCorrectValue Coverage Results" MODIFIED="1669039515685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Assignment2Java$DeckTest_isDeckShuffled.ic" NAME="DeckTest.isDeckShuffled Coverage Results" MODIFIED="1669039386553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Assignment2Java$HandTest_exchangeCard.ic" NAME="HandTest.exchangeCard Coverage Results" MODIFIED="1670000619323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Assignment2Java$DeckTest.ic" NAME="DeckTest Coverage Results" MODIFIED="1669303718204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Assignment2Java$HandTest.ic" NAME="HandTest Coverage Results" MODIFIED="1670000626180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Assignment2Java$DeckTest_doesDeckContainCard.ic" NAME="DeckTest.doesDeckContainCard Coverage Results" MODIFIED="1669301263154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Assignment2Java$CardTests_isTenEqualToTenUsingEquals.ic" NAME="CardTests.isTenEqualToTenUsingEquals Coverage Results" MODIFIED="1669303446966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Assignment2Java$CardTests.ic" NAME="CardTests Coverage Results" MODIFIED="1669303475819" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

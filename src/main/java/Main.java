@@ -19,7 +19,6 @@ public class Main {
 
         hand.sortHand();
 
-        System.out.println(Arrays.toString(hand.getLongestStreakOfCards()));
 
 
 

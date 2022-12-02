@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -144,6 +143,32 @@ class DeckTest {
 
         return cardArray;
     }
+
+    @Test
+    void retrievingCardFromDeck(){
+        deck.generateNewDeckOfCards();
+        Card retrievedCard = deck.remove(testCard);
+        assertEquals(retrievedCard,testCard);
+    }
+
+    @Test
+    void retrievingCardRemovesCardFromDeck(){
+        deck.generateNewDeckOfCards();
+        deck.remove(testCard);
+        assertFalse(deck.contains(testCard));
+    }
+
+    @Test
+    void removeRandomCardFromDeck(){
+        deck.generateNewDeckOfCards();
+        Card randomCard = deck.removeRandomCard();
+        assertFalse(deck.contains(randomCard));
+    }
+
+
+
+
+
 
 
 

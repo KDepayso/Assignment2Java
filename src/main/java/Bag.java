@@ -36,16 +36,18 @@ public abstract class Bag {
     }
 
 
-    public boolean remove(Card anEntry) {
-        boolean found = false;
-        int index = 0;
-        while(!found && index < numberOfEntries)
-            if(bag[index].equals(anEntry)) found = true;
-            else index++;
-        if(found){ removeElementAt(index); }
-        return found;
-    }
 
+    public Card remove(Card desiredCard){
+
+        int index = 0;
+        while(index < numberOfEntries){
+            if(bag[index].equals(desiredCard)){
+                return removeElementAt(index);
+            }
+            else index++;
+        }
+        return null;
+    }
 
     public void clear() {
         while(!isEmpty()) remove();

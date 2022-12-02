@@ -5,7 +5,6 @@ public final class Deck extends Bag {
 
     public Deck() {
         super(52);
-
     }
 
 
@@ -20,6 +19,16 @@ public final class Deck extends Bag {
             }
         }
     }
+
+    public Card removeRandomCard(){
+        shuffleDeck();
+        Card[] deckArray = toArray();
+        Random random = new Random();
+        int randomIndex = random.nextInt(getCurrentSize());
+
+        return remove(deckArray[randomIndex]);
+    }
+
 
     public void shuffleDeck(){
         Random rand = new Random();

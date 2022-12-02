@@ -27,7 +27,6 @@ public class Hand extends Bag{
             }
 
             replaceHand(currentHand);
-
     }
 
     private void replaceHand(Card[] replacementHand){
@@ -37,43 +36,31 @@ public class Hand extends Bag{
         }
     }
 
+
+    /*
+        Card will be taken from deck before card from hand is removed
+        This will prevent the user from potentially getting the same card that they exchanged.
+     */
+    public void exchangeCard(Deck currentDeck,Card cardToExchange){
+
+        remove(cardToExchange);
+        addNewEntry(currentDeck.removeRandomCard());
+        currentDeck.addNewEntry(cardToExchange);
+    }
+
     public int determineStreakScore(){
-        return 0;
-    }
-
-    private int determineLongestStreak(){
-        int[] ranks = getRanksOfHand();
-        int streakLength = 1, maxStreakLength = 0;
-
-        for(int i = 0; i < ranks.length - 1; i++){
-
-            if(ranks[i] + 1 == ranks[i+1]){
-                streakLength++;
-            }
-            else {
-                streakLength = 1;
-            }
-
-            if(maxStreakLength < streakLength){
-                maxStreakLength = streakLength;
-            }
-
+        int score;
+        Card[] bestStreakOfCards = getLongestStreakOfCards();
+        score = bestStreakOfCards.length;
+        if(bonusPointSuit()){
+            score++;
+        }
+        if(bonusPointColour()){
+            score++;
         }
 
-        return maxStreakLength;
-    }
+        return score;
 
-    private int[] getRanksOfHand(){
-        sortHand();
-
-        int[] ranks = new int[this.getCurrentSize()];
-        Card[] cards = this.toArray();
-
-        for(int i = 0; i < ranks.length; i++){
-            ranks[i] = cards[i].getRankValue();
-        }
-
-        return ranks;
     }
 
     private boolean bonusPointColour(){
@@ -100,7 +87,19 @@ public class Hand extends Bag{
         return true;
     }
 
-    public Card[] getLongestStreakOfCards(){
+    /*
+    Add cards to a temp array and then check next card in hand to see if it's in sequence.
+    If it is, that card will also be added to the temp array.
+    If not, the temp array will be cleared as it is no longer in sequence.
+    After each card is added to the temp hand, the length of the temp hand is compared to the current best hand and
+    if the best hand is smaller than the temp hand, the temp hand will be copied to the best hand.
+    A separate copy method had to be created, as using 'bestHand = tempHand' would equate their references and not copy
+    the values.
+
+    A downside of this method is that it will attempt to add duplicate cards to the hand, however there is validation
+    in place to prevent this from happening. The only downside is that it is inefficient.
+     */
+    private Card[] getLongestStreakOfCards(){
         this.sortHand();
         Card[] handArray = this.toArray();
 
