@@ -137,6 +137,15 @@ public class Hand extends Bag{
     }
 
 
+    public String toStringNumbered(){
+        String strResult = "";
+        for(int i = 0; i < getCurrentSize(); i++)
+            strResult += i+1 + ". " + this.toArray()[i] + "\n";
+        strResult += "";
+        return strResult;
+    }
+
+
 
 
 
