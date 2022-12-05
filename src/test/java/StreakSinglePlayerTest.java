@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class StreakSinglePlayerTest {
 
-    static Deck deck = new Deck();
+    static Deck deck = new Deck(true);
     static Hand hand = new Hand(5);
 
     static Card card1 = new Card(Ranks.TWO, Suits.HEARTS);
@@ -37,7 +37,7 @@ class StreakSinglePlayerTest {
     void exchangeCards(){
         StreakSinglePlayer streakSinglePlayer = new StreakSinglePlayer(deck,hand,"Player");
         streakSinglePlayer.dealHand();
-        streakSinglePlayer.exchangeCards();
+        streakSinglePlayer.exchangeCard(1);
 
 
     }

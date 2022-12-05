@@ -57,7 +57,9 @@ class HandTest {
         tempHand.addNewEntry(card4);
         tempHand.addNewEntry(card5);
 
-        assertEquals(2,tempHand.determineStreakScore());
+        tempHand.calculateFinalScore();
+
+        assertEquals(2,tempHand.getScore());
 
 
     }
@@ -66,7 +68,8 @@ class HandTest {
     void isSuitScoreCalculated(){
 
         generateHand();
-        assertEquals(7, hand.determineStreakScore());
+        hand.calculateFinalScore();
+        assertEquals(7, hand.getScore());
     }
 
     @Test
@@ -86,7 +89,9 @@ class HandTest {
         tempHand.addNewEntry(card4);
         tempHand.addNewEntry(card5);
 
-        assertEquals(3,tempHand.determineStreakScore());
+        tempHand.calculateFinalScore();
+
+        assertEquals(3,tempHand.getScore());
     }
 
     @Test
@@ -116,13 +121,15 @@ class HandTest {
         tempHand.addNewEntry(card4);
         tempHand.addNewEntry(card5);
 
-        assertEquals(5,tempHand.determineStreakScore());
+        tempHand.calculateFinalScore();
+
+        assertEquals(5,tempHand.getScore());
 
     }
 
     @Test
     void exchangeCard(){
-        Deck deck = new Deck();
+        Deck deck = new Deck(false);
         Hand testHand = new Hand(1);
 
         deck.addNewEntry(card1);

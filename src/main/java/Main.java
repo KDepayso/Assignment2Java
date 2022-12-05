@@ -1,37 +1,61 @@
-import java.util.Arrays;
+
+import java.util.Scanner;
 
 public class Main {
+
+
     public static void main(String[] args) {
-        Hand hand = new Hand(5);
-//        Card card1 = new Card(Ranks.TWO, Suits.HEARTS);
-//        Card card2 = new Card(Ranks.THREE, Suits.HEARTS);
-//        Card card3 = new Card(Ranks.FOUR, Suits.HEARTS);
-//        Card card4 = new Card(Ranks.FIVE, Suits.HEARTS);
-//        Card card5 = new Card(Ranks.SIX, Suits.HEARTS);
-//
-//        hand.addNewEntry(card3);
-//        hand.addNewEntry(card1);
-//        hand.addNewEntry(card5);
-//        hand.addNewEntry(card4);
-//        hand.addNewEntry(card2);
-
-        System.out.println(hand);
-
-        hand.sortHand();
-
-        System.out.println(hand.toStringNumbered());
-
-        Deck deck = new Deck();
-        deck.generateNewDeckOfCards();
-
-        StreakSinglePlayer streakSinglePlayer = new StreakSinglePlayer(deck,hand,"Player");
-        streakSinglePlayer.dealHand();
-        streakSinglePlayer.exchangeCards();
-
-
-
-
-
+        mainMenu();
 
     }
+
+    private static void mainMenu(){
+        System.out.println("\n\t\tSTREAK\t\t" +
+                "\n----------------------" +
+                "\n1. Single Player Game" +
+                "\n2. 2-Player Game" +
+                "\n3. View High Score Table" +
+                "\n9. Exit" +
+                "\n\nEnter Choice > ");
+
+        singlePlayerGame();
+
+    }
+
+    private static void singlePlayerGame(){
+        int numberOfCards;
+        String name;
+
+        System.out.print("You have selected Single Player Game, please Enter your name > ");
+        name = getName();
+
+        System.out.print("Please enter the number of cards you want per hand > ");
+        numberOfCards = GetIntInput.getChoice();
+
+        while (numberOfCards < 5 || numberOfCards > 10){
+            System.out.print("Please enter a value between 5 and 10 > ");
+            numberOfCards = GetIntInput.getChoice();
+        }
+
+        Hand hand = new Hand(numberOfCards);
+        Deck deck = new Deck(true);
+
+        StreakSinglePlayer streakSinglePlayer = new StreakSinglePlayer(deck,hand,name);
+        streakSinglePlayer.createNewGame();
+
+    }
+
+    private static String getName(){
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.next();
+        NameValidator validateName = new NameValidator();
+
+        while (!validateName.isNameValid(name)) {
+            System.out.println("Invalid name, please ensure name is only letters and less than 30 characters long");
+            name = scanner.next();
+        }
+
+        return name;
+    }
+
 }

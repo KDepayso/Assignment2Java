@@ -1,9 +1,9 @@
 public class Hand extends Bag{
 
-    int maxCards;
+
+    private int score;
     public Hand(int numberOfCardsInHand) {
         super(numberOfCardsInHand);
-        maxCards = numberOfCardsInHand;
 
     }
 
@@ -29,6 +29,10 @@ public class Hand extends Bag{
             replaceHand(currentHand);
     }
 
+    public int getScore() {
+        return score;
+    }
+
     private void replaceHand(Card[] replacementHand){
         this.clear();
         for(Card card: replacementHand){
@@ -48,19 +52,18 @@ public class Hand extends Bag{
         currentDeck.addNewEntry(cardToExchange);
     }
 
-    public int determineStreakScore(){
-        int score;
+    public void calculateFinalScore(){
+        int finalScore;
         Card[] bestStreakOfCards = getLongestStreakOfCards();
-        score = bestStreakOfCards.length;
+        finalScore = bestStreakOfCards.length;
         if(bonusPointSuit()){
-            score++;
+            finalScore++;
         }
         if(bonusPointColour()){
-            score++;
+            finalScore++;
         }
 
-        return score;
-
+        score = finalScore;
     }
 
     private boolean bonusPointColour(){

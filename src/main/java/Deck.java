@@ -3,9 +3,12 @@ import java.util.Random;
 public final class Deck extends Bag {
 
 
-    public Deck() {
+    public Deck(boolean preGenerateDeck){
         super(52);
+        if (preGenerateDeck) generateNewDeckOfCards();
+
     }
+
 
 
     public void generateNewDeckOfCards(){
