@@ -9,6 +9,15 @@ public class StreakSinglePlayer extends Streak{
 
     }
 
+    public void saveScore(int score){
+
+    }
+
+
+
+
+
+
 
 
 

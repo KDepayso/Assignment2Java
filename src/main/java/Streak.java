@@ -14,8 +14,6 @@ public abstract class Streak {
         dealHand();
         displayScoreAndHand();
         exchangeCardsPhase();
-
-
     }
 
     public void exchangeCardsPhase(){
