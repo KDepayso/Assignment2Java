@@ -1,81 +1,65 @@
 import java.io.*;
-import java.util.Arrays;
 
-public class HighScoreManager extends FileManager {
+
+public class HighScoreManager{
 
 
     FileManager fileManager;
+    private final File highScoreFile = new File("./src/main/resources/HighScores.txt");
     AListArray<Score> currentHighScores;
 
-    private final File highScoreFile = new File("./src/main/resources/HighScores.txt");
-
     public HighScoreManager(){
-        super();
-        currentHighScores = fileToScoreList();
+        fileManager = new FileManager(highScoreFile);
+        currentHighScores = stringToScoreList(fileManager.readFile());
     }
 
+    //Only used for JUnit Testing.
+    protected HighScoreManager(File testFile){
+        fileManager = new FileManager(testFile);
+        currentHighScores = stringToScoreList(fileManager.readFile());
+        sortScoreList(currentHighScores);
 
+    }
 
-    @Override
-    public void writeScoreToFile(Score newScore){
-        if(getNumberOfLines() < 5){
-            super.writeScoreToFile(newScore);
+    public boolean isScoreAHighScore(Score newScore){
+        boolean validScore = false;
+        if(currentHighScores.getLength() < 5){
+            validScore = true;
         }
-        else if(isScoreAHighScore(newScore)){
-            clearFile();
-            currentHighScores.toArray()[0] = newScore;
-            writeAllHighScoresToFile();
-        }
+        return validScore;
     }
 
-    private void writeAllHighScoresToFile(){
-        for(Score score: currentHighScores.toArray()){
-            writeScoreToFile(score);
-        }
-    }
-
-    private boolean isScoreAHighScore(Score newScore){
-        Score[] currentScores = sortScores(fileToScoreList().toArray());
-        return newScore.compareTo(currentScores[0]) > 0;
-    }
-
-    private Score[] sortScores(Score[] scoreArray){
-
-        int firstPos = 0, lastPos =  scoreArray.length -1;
+    public void sortScoreList(AListArray<Score> scoreList){
+        int firstPos = 1, lastPos = scoreList.getLength() - 1;
         int lastSwapPos;
         Score temp;
 
         while(firstPos < lastPos){
             lastSwapPos = firstPos;
-            for(int j = 0; j < lastPos; j++){
-                if (scoreArray[j].compareTo(scoreArray[j + 1]) > 0){
-                    temp = scoreArray[j];
-                    scoreArray[j] = scoreArray[j+1];
-                    scoreArray[j+1] = temp;
+            for(int j = 1; j < lastPos; j++){
+                if (scoreList.getEntry(j).compareTo(scoreList.getEntry(j + 1)) > 0){
+                    temp = scoreList.getEntry(j);
+                    scoreList.replace(j,scoreList.getEntry(j + 1));
+                    scoreList.replace(j,temp);
                     lastSwapPos = j;
                 }
             }
             lastPos = lastSwapPos;
         }
-
-        return scoreArray;
     }
 
-    private AListArray<Score> fileToScoreList(){
-        String[] scoreStringArray = fileToStringArray();
 
+
+
+    private AListArray<Score> stringToScoreList(AListArray<String> stringList){
         AListArray<Score> scoreList = new AListArray<>();
-        for (String score : scoreStringArray) {
-            scoreList.add(convertStringToScore(score));
+        for(int i = 1; i <= stringList.getLength(); i++){
+            scoreList.add(convertStringToScore(stringList.getEntry(i)));
         }
         return scoreList;
     }
 
-    private Score[] scoreListToScoreArray(AListArray<Score> scoreList){
-        return Arrays.copyOf(scoreList.toArray(), scoreList.getLength(), Score[].class);
-    }
     private String[] splitScoreString(String fullScore){
-
         //Regex is written as " | "
         return fullScore.split("\\s\\|\\s");
     }
@@ -87,8 +71,8 @@ public class HighScoreManager extends FileManager {
 
 
     public void displayHighScores(){
-        for(Score score: currentHighScores.toArray()){
-            System.out.println(score.display());
+        for(int i = 1; i <= currentHighScores.getLength(); i++){
+            currentHighScores.getEntry(i).display();
         }
     }
 

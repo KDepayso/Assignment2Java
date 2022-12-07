@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3525f51-e742-45b4-8580-6b20585f5f4a" name="Changes" comment="Finished Single player game, add testing">
-      <change afterPath="$PROJECT_DIR$/src/main/java/AListArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/FileManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/HighScoreManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Score.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/HighScores.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/HighScoreManagerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ScoreTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/HighScoresTest.txt" afterDir="false" />
+    <list default="true" id="b3525f51-e742-45b4-8580-6b20585f5f4a" name="Changes" comment="Fix High Score">
+      <change afterPath="$PROJECT_DIR$/src/test/java/FileManagerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Streak.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Streak.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StreakSinglePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StreakSinglePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AListArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AListArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/HighScoreManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HighScoreManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Score.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/HighScores.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/HighScores.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HighScoreManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HighScoreManagerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,51 +74,51 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="HighScoreManagerTest.canValidScoreBeAdded" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FileManagerTest.clearFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment2Java" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HighScoreManagerTest" />
-      <option name="METHOD_NAME" value="canValidScoreBeAdded" />
+      <option name="MAIN_CLASS_NAME" value="FileManagerTest" />
+      <option name="METHOD_NAME" value="clearFile" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HighScoreManagerTest.isEvenScoreRejected" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FileManagerTest.readFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment2Java" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HighScoreManagerTest" />
-      <option name="METHOD_NAME" value="isEvenScoreRejected" />
+      <option name="MAIN_CLASS_NAME" value="FileManagerTest" />
+      <option name="METHOD_NAME" value="readFile" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HighScoreManagerTest.isInvalidScoreRejected" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FileManagerTest.writeStringToFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment2Java" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HighScoreManagerTest" />
-      <option name="METHOD_NAME" value="isInvalidScoreRejected" />
+      <option name="MAIN_CLASS_NAME" value="FileManagerTest" />
+      <option name="METHOD_NAME" value="writeStringToFile" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HighScoreManagerTest.writeToFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HighScoreManagerTest.createHighScoreManager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment2Java" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="HighScoreManagerTest" />
-      <option name="METHOD_NAME" value="writeToFile" />
+      <option name="METHOD_NAME" value="createHighScoreManager" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ScoreTest.toStringTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HighScoreManagerTest.displayHighScores" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment2Java" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ScoreTest" />
-      <option name="METHOD_NAME" value="toStringTest" />
+      <option name="MAIN_CLASS_NAME" value="HighScoreManagerTest" />
+      <option name="METHOD_NAME" value="displayHighScores" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -131,11 +126,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.HighScoreManagerTest.isEvenScoreRejected" />
-        <item itemvalue="JUnit.HighScoreManagerTest.isInvalidScoreRejected" />
-        <item itemvalue="JUnit.HighScoreManagerTest.canValidScoreBeAdded" />
-        <item itemvalue="JUnit.ScoreTest.toStringTest" />
-        <item itemvalue="JUnit.HighScoreManagerTest.writeToFile" />
+        <item itemvalue="JUnit.FileManagerTest.readFile" />
+        <item itemvalue="JUnit.FileManagerTest.writeStringToFile" />
+        <item itemvalue="JUnit.FileManagerTest.clearFile" />
+        <item itemvalue="JUnit.HighScoreManagerTest.displayHighScores" />
+        <item itemvalue="JUnit.HighScoreManagerTest.createHighScoreManager" />
       </list>
     </recent_temporary>
   </component>
@@ -204,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670257992215</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fix High Score">
+      <created>1670348297115</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1670348297115</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -227,9 +229,24 @@
     <MESSAGE value="Added another version of get longest length using Hand class." />
     <MESSAGE value="Refactor exchange cards method to allow unit testing" />
     <MESSAGE value="Finished Single player game, add testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished Single player game, add testing" />
+    <MESSAGE value="Fix High Score" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix High Score" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Hand.java</url>
+          <line>144</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/FileManager.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="MyNode" memberName="data" />
@@ -241,6 +258,7 @@
         <watch expression="hand" language="JAVA" />
         <watch expression="hand" language="JAVA" />
         <watch expression="highScoreManager" language="JAVA" />
+        <watch expression="this" />
       </configuration>
       <configuration name="Application">
         <watch expression="args" />

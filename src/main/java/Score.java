@@ -21,8 +21,8 @@ public class Score implements Comparable<Score>{
         return name + " | " + score + " | " + numberOfCardsPerHand;
     }
 
-    public String display(){
-        return this + " cards per hand";
+    public void display(){
+        System.out.println(this + " cards per hand");
     }
 
 }
