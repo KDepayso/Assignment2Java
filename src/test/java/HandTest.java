@@ -95,6 +95,27 @@ class HandTest {
     }
 
     @Test
+    void doesNoStreakReturnZero(){
+        Hand tempHand = new Hand(5);
+
+        Card card1 = new Card(Ranks.TWO, Suits.DIAMONDS);
+        Card card2 = new Card(Ranks.FOUR, Suits.HEARTS);
+        Card card3 = new Card(Ranks.SEVEN, Suits.DIAMONDS);
+        Card card4 = new Card(Ranks.TEN, Suits.HEARTS);
+        Card card5 = new Card(Ranks.QUEEN, Suits.HEARTS);
+
+        tempHand.addNewEntry(card1);
+        tempHand.addNewEntry(card2);
+        tempHand.addNewEntry(card3);
+        tempHand.addNewEntry(card4);
+        tempHand.addNewEntry(card5);
+
+        tempHand.calculateFinalScore();
+
+        assertEquals(0,tempHand.getScore());
+    }
+
+    @Test
     void doesLengthOverrideSuitBonus(){
 
         /*
@@ -127,22 +148,6 @@ class HandTest {
 
     }
 
-    @Test
-    void exchangeCard(){
-        Deck deck = new Deck(false);
-        Hand testHand = new Hand(1);
-
-        deck.addNewEntry(card1);
-        testHand.addNewEntry(card2);
-
-        testHand.exchangeCard(deck,card2);
-
-        assertTrue(testHand.contains(card1));
-        assertTrue(deck.contains(card2));
-        assertFalse(testHand.contains(card2));
-        assertFalse(deck.contains(card1));
-
-    }
 
 
 

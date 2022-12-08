@@ -10,6 +10,13 @@ public class Score implements Comparable<Score>{
         numberOfCardsPerHand = NumberOfCardsPerHand;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getScore() {
+        return score;
+    }
 
     @Override
     public int compareTo(Score otherScore){

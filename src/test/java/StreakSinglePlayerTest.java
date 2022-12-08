@@ -20,8 +20,6 @@ class StreakSinglePlayerTest {
 
     }
 
-
-
     @Test
     void dealHand() {
         StreakSinglePlayer streakSinglePlayer = new StreakSinglePlayer(deck,hand,"Player");
@@ -37,10 +35,9 @@ class StreakSinglePlayerTest {
     void exchangeCards(){
         StreakSinglePlayer streakSinglePlayer = new StreakSinglePlayer(deck,hand,"Player");
         streakSinglePlayer.dealHand();
-        streakSinglePlayer.exchangeCard(1);
-
-
+        streakSinglePlayer.exchangeCardCounter(1);
     }
+
 
 
 }

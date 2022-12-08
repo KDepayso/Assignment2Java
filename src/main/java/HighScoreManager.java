@@ -5,12 +5,13 @@ public class HighScoreManager{
 
 
     FileManager fileManager;
-    private final File highScoreFile = new File("./src/main/resources/HighScores.txt");
     AListArray<Score> currentHighScores;
 
     public HighScoreManager(){
+        File highScoreFile = new File("./src/main/resources/HighScores.txt");
         fileManager = new FileManager(highScoreFile);
         currentHighScores = stringToScoreList(fileManager.readFile());
+        sortScoreList(currentHighScores);
     }
 
     //Only used for JUnit Testing.
@@ -21,35 +22,43 @@ public class HighScoreManager{
 
     }
 
-    public boolean isScoreAHighScore(Score newScore){
+    public boolean addHighScore(Score newScore){
+        if(!isScoreAHighScore(newScore)) return false;
+        currentHighScores.replace(5,newScore);
+        fileManager.writeToFile(newScore);
+        updateHighScoreFile();
+        return true;
+    }
+
+    private boolean isScoreAHighScore(Score newScore){
         boolean validScore = false;
         if(currentHighScores.getLength() < 5){
+            validScore = true;
+        }
+        if(currentHighScores.getEntry(1).compareTo(newScore) < 0){
             validScore = true;
         }
         return validScore;
     }
 
-    public void sortScoreList(AListArray<Score> scoreList){
+    private void sortScoreList(AListArray<Score> scoreList){
         int firstPos = 1, lastPos = scoreList.getLength() - 1;
         int lastSwapPos;
         Score temp;
 
         while(firstPos < lastPos){
             lastSwapPos = firstPos;
-            for(int j = 1; j < lastPos; j++){
+            for(int j = 1; j <= lastPos; j++){
                 if (scoreList.getEntry(j).compareTo(scoreList.getEntry(j + 1)) > 0){
                     temp = scoreList.getEntry(j);
                     scoreList.replace(j,scoreList.getEntry(j + 1));
-                    scoreList.replace(j,temp);
+                    scoreList.replace(j + 1,temp);
                     lastSwapPos = j;
                 }
             }
             lastPos = lastSwapPos;
         }
     }
-
-
-
 
     private AListArray<Score> stringToScoreList(AListArray<String> stringList){
         AListArray<Score> scoreList = new AListArray<>();
@@ -69,6 +78,14 @@ public class HighScoreManager{
         return new Score(ScoreString[0],Integer.parseInt(ScoreString[1]),Integer.parseInt(ScoreString[2]));
     }
 
+    private void updateHighScoreFile(){
+        fileManager.clearFile();
+        sortScoreList(currentHighScores);
+        for(int i = 1; i <= currentHighScores.getLength() ; i++){
+            fileManager.writeToFile(currentHighScores.getEntry(i));
+        }
+
+    }
 
     public void displayHighScores(){
         for(int i = 1; i <= currentHighScores.getLength(); i++){

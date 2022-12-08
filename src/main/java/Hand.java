@@ -45,12 +45,8 @@ public class Hand extends Bag{
         Card will be taken from deck before card from hand is removed
         This will prevent the user from potentially getting the same card that they exchanged.
      */
-    public void exchangeCard(Deck currentDeck,Card cardToExchange){
 
-        remove(cardToExchange);
-        addNewEntry(currentDeck.removeRandomCard());
-        currentDeck.addNewEntry(cardToExchange);
-    }
+
 
     public void calculateFinalScore(){
         int finalScore;
@@ -68,6 +64,8 @@ public class Hand extends Bag{
 
     private boolean bonusPointColour(){
         Card[] cards = getLongestStreakOfCards();
+        if(cards.length == 0) return false;
+
         Colours streakColour = Colours.valueOf(cards[0].getColour());
         for(Card card : cards){
             if(Colours.valueOf(card.getColour()) != streakColour){
@@ -80,6 +78,8 @@ public class Hand extends Bag{
 
     private boolean bonusPointSuit(){
         Card[] cards = getLongestStreakOfCards();
+        if(cards.length == 0) return false;
+
         Suits currentSuit = Suits.valueOf(cards[0].getSuit());
         for(Card card : cards){
             if(Suits.valueOf(card.getSuit()) != currentSuit){
@@ -128,7 +128,7 @@ public class Hand extends Bag{
 
     }
 
-    private Hand copyFromOtherHand(Hand otherHand){
+    public Hand copyFromOtherHand(Hand otherHand){
         Card[] otherHandArray = otherHand.toArray();
 
         Hand newHand = new Hand(otherHandArray.length);

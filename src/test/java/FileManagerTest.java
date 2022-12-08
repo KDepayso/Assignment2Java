@@ -43,7 +43,15 @@ class FileManagerTest {
     }
 
     @Test
-    void clearFile() {
+    void clearFile() throws IOException {
+        String testString = "Hello World";
+        FileManager fileManager = new FileManager(tempFile);
+        fileManager.writeToFile(testString);
+
+        fileManager.clearFile();
+        assertEquals(0,fileManager.readFile().getLength());
+
+
     }
 
     @Test
