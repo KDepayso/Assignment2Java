@@ -13,11 +13,11 @@ class HandTest {
 
 
     void generateHand(){
-        hand.addNewEntry(card3);
         hand.addNewEntry(card1);
-        hand.addNewEntry(card5);
-        hand.addNewEntry(card4);
         hand.addNewEntry(card2);
+        hand.addNewEntry(card3);
+        hand.addNewEntry(card4);
+        hand.addNewEntry(card5);
     }
 
     @Test
@@ -145,6 +145,30 @@ class HandTest {
         tempHand.calculateFinalScore();
 
         assertEquals(5,tempHand.getScore());
+
+    }
+
+    @Test
+    void canCardBeCopiedToAnotherCard(){
+        Hand tempHand = new Hand(5);
+        tempHand = tempHand.copyFromOtherHand(hand);
+
+        assertEquals(tempHand.toStringNumbered(),hand.toStringNumbered());
+
+    }
+
+    @Test
+    void toStringNumbered(){
+
+        generateHand();
+
+        String expected = "1. TWO of HEARTS" +
+                "\n2. THREE of HEARTS" +
+                "\n3. FOUR of HEARTS" +
+                "\n4. FIVE of HEARTS" +
+                "\n5. SIX of HEARTS\n";
+
+        assertEquals(expected,hand.toStringNumbered());
 
     }
 

@@ -46,8 +46,6 @@ public class Hand extends Bag{
         This will prevent the user from potentially getting the same card that they exchanged.
      */
 
-
-
     public void calculateFinalScore(){
         int finalScore;
         Card[] bestStreakOfCards = getLongestStreakOfCards();

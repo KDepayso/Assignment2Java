@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3525f51-e742-45b4-8580-6b20585f5f4a" name="Changes" comment="Fix High Score and testing">
-      <change afterPath="$PROJECT_DIR$/src/main/java/AddToHand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DoMove.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/RemoveFromHand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ReplaySystem.java" afterDir="false" />
+    <list default="true" id="b3525f51-e742-45b4-8580-6b20585f5f4a" name="Changes" comment="Fix show replay and add testing">
+      <change afterPath="$PROJECT_DIR$/src/test/java/GetIntInputTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/NameValidatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AddToHand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AddToHand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DoMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DoMove.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/HighScoreManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HighScoreManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MyQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MyQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Score.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MyStack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/RemoveFromHand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RemoveFromHand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ReplaySystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ReplaySystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Streak.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Streak.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/StreakSinglePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StreakSinglePlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/StreakTwoPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StreakTwoPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/HighScores.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/HighScores.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/FileManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FileManagerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/HandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HandTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/HighScoreManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HighScoreManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StreakSinglePlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StreakSinglePlayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ScoreTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ScoreTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,9 +32,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -60,7 +62,7 @@
     "ToolWindowRun.ShowToolbar": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "E:/COM498/Week 3/LinkedList",
+    "last_opened_file_path": "E:/COM498/Assignment2/Assignment2Java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -84,58 +86,85 @@
       <recent name="main.java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Assignment2Java" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MyQueue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MyQueue" />
-      <module name="Assignment2Java" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileManagerTest.clearFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="GetIntInputTest.getChoiceRejectsNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment2Java" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FileManagerTest" />
-      <option name="METHOD_NAME" value="clearFile" />
+      <option name="MAIN_CLASS_NAME" value="GetIntInputTest" />
+      <option name="METHOD_NAME" value="getChoiceRejectsNull" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HandTest.doesNoStreakReturnZero" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GetIntInputTest.tryParseInt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assignment2Java" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GetIntInputTest" />
+      <option name="METHOD_NAME" value="tryParseInt" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HandTest.canCardBeCopiedToAnotherCard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment2Java" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="HandTest" />
-      <option name="METHOD_NAME" value="doesNoStreakReturnZero" />
+      <option name="METHOD_NAME" value="canCardBeCopiedToAnotherCard" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HighScoreManagerTest.isValidScoreFalseWhenEqual" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HandTest.toStringNumbered" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assignment2Java" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HandTest" />
+      <option name="METHOD_NAME" value="toStringNumbered" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HighScoreManagerTest.displayHighScores" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment2Java" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="HighScoreManagerTest" />
-      <option name="METHOD_NAME" value="isValidScoreFalseWhenEqual" />
+      <option name="METHOD_NAME" value="displayHighScores" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RunAllTests" type="JUnit" factoryName="JUnit">
+      <module name="Assignment2Java" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.RunAllTests" />
+      <item itemvalue="JUnit.GetIntInputTest.getChoiceRejectsNull" />
+      <item itemvalue="JUnit.GetIntInputTest.tryParseInt" />
+      <item itemvalue="JUnit.HandTest.canCardBeCopiedToAnotherCard" />
+      <item itemvalue="JUnit.HandTest.toStringNumbered" />
+      <item itemvalue="JUnit.HighScoreManagerTest.displayHighScores" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.MyQueue" />
-        <item itemvalue="JUnit.HandTest.doesNoStreakReturnZero" />
-        <item itemvalue="JUnit.FileManagerTest.clearFile" />
-        <item itemvalue="JUnit.HighScoreManagerTest.isValidScoreFalseWhenEqual" />
+        <item itemvalue="JUnit.HandTest.toStringNumbered" />
+        <item itemvalue="JUnit.HandTest.canCardBeCopiedToAnotherCard" />
+        <item itemvalue="JUnit.GetIntInputTest.getChoiceRejectsNull" />
+        <item itemvalue="JUnit.GetIntInputTest.tryParseInt" />
+        <item itemvalue="JUnit.HighScoreManagerTest.displayHighScores" />
       </list>
     </recent_temporary>
   </component>
@@ -218,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670445217408</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Fix show replay and add testing">
+      <created>1670535171932</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1670535171932</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -243,15 +279,21 @@
     <MESSAGE value="Finished Single player game, add testing" />
     <MESSAGE value="Fix High Score" />
     <MESSAGE value="Fix High Score and testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix High Score and testing" />
+    <MESSAGE value="Fix show replay and add testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix show replay and add testing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/HighScoreManager.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="19" />
+          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
+          <line>107</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/HighScoreManagerTest.java</url>
+          <line>92</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -282,7 +324,11 @@
     <SUITE FILE_PATH="coverage/Assignment2Java$DeckTest_isDeckShuffled.ic" NAME="DeckTest.isDeckShuffled Coverage Results" MODIFIED="1669039386553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Assignment2Java$HandTest_exchangeCard.ic" NAME="HandTest.exchangeCard Coverage Results" MODIFIED="1670000619323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Assignment2Java$DeckTest.ic" NAME="DeckTest Coverage Results" MODIFIED="1669303718204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Assignment2Java$NameValidatorTest.ic" NAME="NameValidatorTest Coverage Results" MODIFIED="1670585433842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Assignment2Java$HandTest.ic" NAME="HandTest Coverage Results" MODIFIED="1670000626180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Assignment2Java$Main.ic" NAME="Main Coverage Results" MODIFIED="1670584531204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Assignment2Java$RunAllTests.ic" NAME="RunAllTests Coverage Results" MODIFIED="1670584709179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Assignment2Java$GetIntInputTest.ic" NAME="GetIntInputTest Coverage Results" MODIFIED="1670616656554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Assignment2Java$DeckTest_doesDeckContainCard.ic" NAME="DeckTest.doesDeckContainCard Coverage Results" MODIFIED="1669301263154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Assignment2Java$CardTests_isTenEqualToTenUsingEquals.ic" NAME="CardTests.isTenEqualToTenUsingEquals Coverage Results" MODIFIED="1669303446966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Assignment2Java$CardTests.ic" NAME="CardTests Coverage Results" MODIFIED="1669303475819" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

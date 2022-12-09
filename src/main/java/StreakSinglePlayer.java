@@ -20,10 +20,10 @@ public class StreakSinglePlayer extends Streak{
     }
 
     public void viewReplay(){
-        replaySystem.showReplay();
+        replaySystem.showFullReplay();
+
+
     }
-
-
     private Score createScore(){
         return new Score(playerName,getScore(), getNumberOfCards());
     }

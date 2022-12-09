@@ -24,7 +24,7 @@ public class HighScoreManager{
 
     public boolean addHighScore(Score newScore){
         if(!isScoreAHighScore(newScore)) return false;
-        currentHighScores.replace(5,newScore);
+        currentHighScores.replace(1,newScore);
         fileManager.writeToFile(newScore);
         updateHighScoreFile();
         return true;

@@ -1,6 +1,6 @@
 
-Test1 | 5 | 5
-Test2 | 6 | 5
-k | 6 | 10
-Test4 | 7 | 5
-Test5 | 9 | 5
+test | 2 | 5
+asd | 3 | 5
+asd | 3 | 5
+asd | 4 | 5
+klint | 4 | 5

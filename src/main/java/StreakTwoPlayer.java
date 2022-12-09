@@ -21,6 +21,25 @@ public class StreakTwoPlayer extends Streak{
 
     }
 
+    private Score generatePlayerGame(String playerName){
+        int finalScore = 0;
+
+        for(int i = 0; i < 3 ; i++){
+            int currentScore = 0;
+            super.createNewGame();
+
+            finalScore += getScore();
+            currentScore += getScore();
+
+            addScoreToHighScores(playerName,currentScore);
+
+            System.out.println("\n" + playerName + " has a current total score of " + finalScore);
+            super.resetGame();
+        }
+
+        return createScore(playerName, finalScore);
+    }
+
     private String determineWinner(){
 
         String winningMessage = " wins with a final score of " + getNumberOfCards();
@@ -37,29 +56,6 @@ public class StreakTwoPlayer extends Streak{
 
     private String resultsOfGame(Score playerScore){
         return "\n" + playerScore.getName() + " has finished playing with a final score of " + playerScore.getScore();
-    }
-
-
-
-
-
-    private Score generatePlayerGame(String playerName){
-        int finalScore = 0;
-
-        for(int i = 0; i < 3 ; i++){
-            int currentScore = 0;
-            super.createNewGame();
-
-            finalScore += getScore();
-            currentScore += getScore();
-
-            addScoreToHighScores(playerName,currentScore);
-
-            System.out.println("\n" + playerName + " has a current score of " + finalScore);
-            super.resetGame();
-        }
-
-        return createScore(playerName, finalScore);
     }
 
     private void addScoreToHighScores(String playerName, int score){

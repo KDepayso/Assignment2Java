@@ -49,16 +49,15 @@ class HighScoreManagerTest {
 
     @Test
     void displayHighScores(){
-        PrintStream standardOut = System.out;
         ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputStreamCaptor));
 
 
         String expected =
-        "Test1 | 3 | 5 cards per hand" +
-        "\r\nTest2 | 2 | 5 cards per hand" +
-        "\r\nTest3 | 6 | 5 cards per hand" +
+        "Test2 | 2 | 5 cards per hand" +
+        "\r\nTest1 | 3 | 5 cards per hand" +
         "\r\nTest4 | 4 | 5 cards per hand" +
+        "\r\nTest3 | 6 | 5 cards per hand" +
         "\r\nTest5 | 6 | 5 cards per hand\r\n";
 
         HighScoreManager highScoreManager = new HighScoreManager(tempFile);

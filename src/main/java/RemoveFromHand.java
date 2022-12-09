@@ -11,4 +11,8 @@ public class RemoveFromHand implements DoMove{
     public String toString(){
         return card + " was removed from the hand";
     }
+
+    public Card getCard(){
+        return card;
+    }
 }

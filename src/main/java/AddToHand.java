@@ -9,4 +9,7 @@ public class AddToHand implements DoMove {
         return card + " was added to the hand";
     }
 
+    public Card getCard(){
+        return card;
+    }
 }

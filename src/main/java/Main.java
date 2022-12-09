@@ -45,33 +45,26 @@ public class Main {
     }
 
     private static void singlePlayerGame(){
-        int numberOfCards;
-        String name;
 
+        String name;
         System.out.print("\nYou have selected Single Player Game, please enter your name > ");
         name = getName();
 
-        System.out.print("Please enter the number of cards you want per hand > ");
-        numberOfCards = GetIntInput.getChoice();
-
-        while (numberOfCards < 5 || numberOfCards > 10){
-            System.out.print("Please enter a value between 5 and 10 > ");
-            numberOfCards = GetIntInput.getChoice();
-        }
-
         Deck deck = new Deck(true);
-        Hand hand = new Hand(numberOfCards);
+        Hand hand = new Hand(getNumberOfCards());
 
 
         StreakSinglePlayer streakSinglePlayer = new StreakSinglePlayer(deck,hand,name);
         streakSinglePlayer.createNewGame();
 
-        System.out.println("Do you want to view a replay?");
-        streakSinglePlayer.viewReplay();
+        System.out.println("Do you want to view a replay? (y/n)");
+        if(viewReplay()){
+            streakSinglePlayer.viewReplay();
+        }
 
     }
     private static void twoPlayerGame(){
-        int numberOfCards;
+
         String playerOneName, playerTwoName;
 
         System.out.print("\nYou have selected Two Player Game, please enter the name of player one > ");
@@ -85,6 +78,17 @@ public class Main {
             playerTwoName = getName();
         }
 
+        Deck deck = new Deck(true);
+        Hand hand = new Hand(getNumberOfCards());
+
+
+        StreakTwoPlayer streakTwoPlayer = new StreakTwoPlayer(deck, hand, playerOneName, playerTwoName);
+        streakTwoPlayer.createFullGame();
+
+    }
+
+    private static int getNumberOfCards(){
+        int numberOfCards;
         System.out.print("Please enter the number of cards you want per hand > ");
         numberOfCards = GetIntInput.getChoice();
 
@@ -92,15 +96,9 @@ public class Main {
             System.out.print("Please enter a value between 5 and 10 > ");
             numberOfCards = GetIntInput.getChoice();
         }
-
-        Deck deck = new Deck(true);
-        Hand hand = new Hand(numberOfCards);
-
-
-        StreakTwoPlayer streakTwoPlayer = new StreakTwoPlayer(deck, hand, playerOneName, playerTwoName);
-        streakTwoPlayer.createFullGame();
-
+        return numberOfCards;
     }
+
     private static void viewHighScoreTable(){
         HighScoreManager highScoreManager = new HighScoreManager();
         highScoreManager.displayHighScores();
@@ -117,6 +115,13 @@ public class Main {
         }
 
         return name;
+    }
+
+    private static boolean viewReplay(){
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.next().toLowerCase();
+
+        return userInput.equals("yes") || userInput.equals("y");
     }
 
 }

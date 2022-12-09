@@ -9,8 +9,6 @@ public final class Deck extends Bag {
 
     }
 
-
-
     public void generateNewDeckOfCards(){
 
         for(Suits suits : Suits.values()){

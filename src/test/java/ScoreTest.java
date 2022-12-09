@@ -20,6 +20,6 @@ class ScoreTest {
     @Test
     void toStringTest(){
         Score testScore = new Score("Test",10, 10);
-        assertEquals("Test | 10 | 10 cards per hand",testScore.toString());
+        assertEquals("Test | 10 | 10 ",testScore.toString());
     }
 }

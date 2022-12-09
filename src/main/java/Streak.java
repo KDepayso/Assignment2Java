@@ -23,7 +23,7 @@ public abstract class Streak {
     private void exchangeCardsPhase(){
         int choice;
         while(numberOfSwaps < streakHand.getMaximumSize()){
-            System.out.println(numberOfSwaps + 1 + " of " + streakHand.getMaximumSize() + ": Choose card to exchange or 0 to exit");
+            System.out.println(numberOfSwaps+ 1 + " of " + streakHand.getMaximumSize() + ": Choose card to exchange or 0 to exit");
             choice = GetIntInput.getChoice();
 
             if(choice == 0) break;
@@ -49,8 +49,6 @@ public abstract class Streak {
             Card cardToAddToHand = streakDeck.removeRandomCard();
 
             exchangeCard(cardToRemoveFromHand,cardToAddToHand);
-
-
             addToReplay(cardToRemoveFromHand,cardToAddToHand);
             numberOfSwaps++;
         }
@@ -105,6 +103,7 @@ public abstract class Streak {
     protected void resetGame(){
         streakHand.clear();
         streakDeck.generateNewDeckOfCards();
+        numberOfSwaps = 0;
     }
 
 
